@@ -7,10 +7,6 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
 a {
   cursor: pointer;
 }
@@ -19,11 +15,13 @@ body {
   color: #000d3d;
   font-size: 14px;
   font-weight: 400;
+  height: 100vh;
 }
 
 header {
   display: flex;
   height: 70px;
+  /* position: fixed; */
 }
 
 /* HEADER */
@@ -119,14 +117,17 @@ header {
 .product-section {
   flex-direction: column;
   display: flex;
-
   flex: 90;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 60rem;
 }
 
 .product-filter {
   display: flex;
   height: 44px;
   gap: 14px;
+  margin-bottom: 28px;
 }
 
 .product-filter > div > label {
@@ -153,7 +154,7 @@ header {
   height: 100%;
   border-radius: 6px;
   border: 1px solid #c7ccda;
-  padding: 0 16px 0 34px;
+  padding: 12px 34px;
   color: #5c6480;
 }
 
@@ -175,10 +176,6 @@ header {
 
 /* ACTION */
 
-.product-action {
-  margin-top: 28px;
-}
-
 .product-action-items {
   display: flex;
   gap: 14px;
@@ -197,10 +194,6 @@ header {
 .product-details {
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  margin-top: 15px;
-  max-height: 40rem;
 }
 
 .product-details--container {
@@ -224,6 +217,7 @@ header {
   border-top-right-radius: 6px;
   gap: 8px;
   top: 0;
+  margin-top: 15px;
 }
 
 /* heading Flex */
