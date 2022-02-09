@@ -7,6 +7,10 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 a {
   cursor: pointer;
 }
@@ -15,8 +19,6 @@ body {
   color: #000d3d;
   font-size: 14px;
   font-weight: 400;
-  width: 1440px;
-  margin: 0 auto;
 }
 
 header {
@@ -63,7 +65,7 @@ header {
 .main-content {
   background-color: #edf0f5;
   display: flex;
-  padding: 0 16px;
+  padding: 16px;
   gap: 16px;
 }
 
@@ -71,7 +73,7 @@ header {
   display: flex;
   flex-direction: column;
   width: 245px;
-  margin-top: 10px;
+  flex: 15;
 }
 
 .menu-section a {
@@ -117,8 +119,8 @@ header {
 .product-section {
   flex-direction: column;
   display: flex;
-  flex: 1;
-  margin-top: 10px;
+
+  flex: 90;
 }
 
 .product-filter {
@@ -139,7 +141,7 @@ header {
   top: -4px;
   bottom: 0;
   width: 20px;
-  background: url(../img/searchIcon.svg);
+  background: url(./img/searchIcon.svg);
 }
 
 .product-filter-input-container {
@@ -195,41 +197,86 @@ header {
 .product-details {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-top: 15px;
+  max-height: 40rem;
+}
+
+.product-details--container {
+  display: flex;
+  flex: 1;
+}
+
+.product-details--heading > input {
+  margin-left: 2.3rem;
 }
 
 .product-details--heading {
   display: flex;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 12px 50px;
+  padding: 12px;
   align-items: center;
   background-color: #dee4ef;
-  margin-top: 15px;
+  position: sticky;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  gap: 8px;
+  top: 0;
 }
 
+/* heading Flex */
+
 .product-details--heading-info {
-  margin-left: 10px;
+  flex: 115;
 }
 
 .product-details--heading-channel {
-  margin-left: 176px;
+  flex: 40;
 }
 
 .product-details--heading-category {
-  margin-left: 19px;
+  flex: 37;
 }
 
 .product-details--heading-brand {
-  margin-left: 12px;
+  flex: 59;
 }
 
 .product-details--heading-stock {
-  margin-left: 34px;
+  flex: 70;
 }
+
 .product-details--heading-price {
-  margin-left: 122px;
+  flex: 75;
+}
+
+/* Row flex */
+
+.product-details--row-details-info {
+  flex: 115;
+}
+
+.product-details--row-details-channel {
+  flex: 40;
+}
+
+.product-details--row-details-category {
+  flex: 37;
+}
+
+.product-details--row-details-brand {
+  flex: 59;
+}
+
+.product-details--row-details-stock {
+  flex: 70;
+}
+.product-details--row-details-price {
+  flex: 75;
+  display: flex;
+  justify-content: space-between;
 }
 
 .product-details--row {
@@ -311,7 +358,7 @@ header {
 }
 
 .product-details--subheading-container {
-  padding: 0 0 0 75px;
+  padding: 0 12px 0 75px;
   justify-items: center;
   display: flex;
   border-bottom: 1px solid #f1f5ff;
@@ -331,33 +378,51 @@ header {
   align-items: center;
   height: 100%;
   background-color: #f1f5ff;
-  gap: 8px;
-  padding: 12px 12px 12px 0;
+
+  padding: 12px 0;
   border-bottom: 1px solid #e2e8f2;
 }
 
-.product-details--subheading-left {
-  display: flex;
-  flex: 1;
-}
-
-.product-details--subheading-right {
-  margin-left: 102px;
-  display: flex;
-  align-items: center;
+.product-details--subheading-selling {
+  flex: 117;
 }
 
 .product-details--subheading-shop {
-  margin-left: 192px;
+  flex: 61;
 }
 .product-details--subheading-status {
-  margin-left: 106px;
+  flex: 63;
 }
 .product-details--subheading-stock {
-  margin-left: 22px;
+  flex: 66;
 }
 .product-details--subheading-price {
-  margin-left: 135px;
+  flex: 75;
+}
+
+/* subheading details flex */
+
+.product-details--subheading-selling-content {
+  flex: 117;
+}
+
+.product-details--subheading-shop-content {
+  flex: 61;
+}
+
+.product-details--subheading-status-content {
+  flex: 63;
+}
+
+.product-details--subheading-stock-content {
+  flex: 66;
+}
+
+.product-details--subheading-price-content {
+  flex: 75;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
 /* PAGINATION */
@@ -412,6 +477,12 @@ header {
   align-items: center !important;
   display: flex;
   gap: 10px;
+}
+
+.flex-small-gap {
+  align-items: center !important;
+  display: flex;
+  gap: 5px;
 }
 
 .small-top-margin {
